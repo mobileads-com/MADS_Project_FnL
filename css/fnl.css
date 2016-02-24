@@ -1,0 +1,329 @@
+@font-face {
+	font-family: "Roboto-Bold";
+	src: url("../fonts/Roboto-Bold.ttf");
+}
+
+@font-face {
+	font-family: "Roboto-Light";
+	src: url("../fonts/Roboto-Light.ttf");
+}
+
+@font-face {
+	font-family: "Roboto-Medium";
+	src: url("../fonts/Roboto-Medium.ttf");
+}
+
+@font-face {
+	font-family: "Roboto-Regular";
+	src: url("../fonts/Roboto-Regular.ttf");
+}
+
+body{
+	margin: 0px;
+}
+
+.text-center{
+	text-align: center !important;
+}
+
+.ad-wrapper{
+	background: url('../img/bg.png');
+	height: 480px;
+	width: 320px;
+}
+
+.first-frame p.text-header {
+	font-family: Roboto-Medium;
+	color: #e44c3b;
+	font-size: 22.78px;
+	margin: 0px;
+	padding-top: 10px;
+}
+
+.first-frame img.logo {
+	height: 25px;
+	margin: 0 auto;
+	display: block;
+	padding-top: 2px;
+}
+
+.first-frame .text-currency, .first-frame .text-currency-label{
+	font-family: Roboto-Light;
+	color: #FFFFFF;
+	margin: 0px;
+}
+
+.first-frame .text-currency{
+	font-size: 36px;
+}
+
+.first-frame .text-currency-label{
+	font-size: 14px;
+}
+
+.first-frame .text-content{
+	font-family: Roboto-Medium;
+	color: #e42668;
+	font-size: 18px;
+	margin: 0px;
+	padding-top: 8px;
+}
+
+.text-click{
+	font-family: Roboto-Medium;
+	color: #231f20;
+	margin: 0px;
+	padding-top: 18px;
+}
+
+img.arrow-down{
+	margin: 0 auto;
+	display: block;
+	cursor: pointer;
+}
+
+.first-frame img.torch {
+	margin: 0 auto;
+	display: block;
+	margin-top: 14px;
+}
+
+.second-frame .logo{
+	margin: 0 auto;
+	display: block;
+	padding-top:10px;
+}
+
+.second-frame img.torch {
+	margin: 0 auto;
+	display: block;
+	margin-top: 129px;
+}
+
+.second-frame img.flame {
+	position: absolute;
+	margin-top: -14px;
+	margin-left: 104px;
+	z-index: 1;
+	cursor: pointer;
+}
+
+.second-frame .bottom-bar {
+	width: 320px;
+	height: 50px;
+	background-color: #e42668;
+	margin-top: -50px;
+	position: absolute;
+}
+
+.second-frame .bottom-bar p {
+	font-family: Roboto-Light;
+	color: #FFFFFF;
+	margin: 0px;
+	font-size: 11px;
+
+	margin-top: 2px;
+}
+
+.second-frame .bottom-bar p.timer-left{
+	margin-left: 33px;
+}
+
+.second-frame .bottom-bar p.timer-right{
+	float: right !important;
+	text-align: right;
+	margin-top: -13px;
+	margin-right: 33px;
+}
+
+.second-frame .bottom-bar-status{
+	margin: 0 auto;
+	display: block;
+	margin-top: 18px;
+}
+
+
+.success-frame .bottom-bar {
+	width: 320px;
+	height: 50px;
+	background-color: #e42668;
+	margin-top: 12px;
+	position: absolute;
+}
+
+img.content{
+	margin: 0 auto;
+	display: block;
+	padding-top: 28px;
+	width: 280px;
+}
+
+.success-frame img.ribbon {
+	margin: 0 auto;
+	display: block;
+	margin-top:48px;
+}
+
+.success-frame p.text-content {
+	color: #e44c3b;
+	font-family: Roboto-Medium;
+	padding: 0 56px;
+	margin-top: -186px;
+	font-size: 14px;
+	position: absolute;
+}
+
+p.bottom-text {
+	font-family: Roboto-Light;
+	color: #FFF;
+	font-size: 26px;
+	margin: 0;
+	padding-top: 7px;
+}
+
+.failed-frame p.text-content {
+	color: #e44c3b;
+	font-family: Roboto-Medium;
+	padding: 0 56px;
+	margin-top: -175px;
+	font-size: 16px;
+}
+
+.failed-frame img.sinari-aspirasi {
+	margin: 0 auto;
+	display: block;
+	margin-top: 74px;
+}
+
+.failed-frame p.text-subcontent {
+	font-family: Roboto-Regular;
+	font-size: 8px;
+	padding: 0 30px;
+	font-weight: 800;
+}
+
+.failed-frame img.ribbon {
+	margin: 0 auto;
+	display: block;
+}
+
+.failed-frame .bottom-bar {
+	width: 320px;
+	height: 50px;
+	background-color: #e42668;
+	margin-top: 11px;
+	position: absolute;
+}
+
+.progress-bar {
+	width: 79%;
+	height: 10px;
+	position: relative;
+	background-color: #E42668;
+	margin-top: 16px;
+	margin-left: 33px;
+	border-radius: 5px;
+	border: 1px solid #FFF;
+}
+
+.progress {
+	background-color: #FFF;
+	width: 0px;
+	height: 10px;
+	position: absolute;
+	border-radius: 4px;
+}
+
+.fadeIn_1sec {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-delay: 1s;
+	animation-delay: 1s;
+}
+
+.fadeIn_2halfsec {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-delay: 2.5s;
+	animation-delay: 2.5s;
+}
+
+.fadeIn_3secduration{
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-duration: 3s;
+	animation-duration: 3s;
+}
+
+.fadeIn_3sec {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-duration: 3s;
+	animation-duration: 3s;
+	-webkit-animation-delay: 3s;
+	animation-delay: 3s;
+}
+
+.slideInDown_halfsec {
+	-webkit-animation-name: slideInDown;
+	animation-name: slideInDown;
+	-webkit-animation-delay: 0.5s;
+	animation-delay: 0.5s;
+}
+
+.slideInDown_1sec {
+	-webkit-animation-name: slideInDown;
+	animation-name: slideInDown;
+	-webkit-animation-delay: 1s;
+	animation-delay: 1s;
+}
+
+.slideInDown_1halfsec {
+	-webkit-animation-name: slideInDown;
+	animation-name: slideInDown;
+	-webkit-animation-delay: 1.5s;
+	animation-delay: 1.5s;
+}
+
+.slideInDown_2sec {
+	-webkit-animation-name: slideInDown;
+	animation-name: slideInDown;
+	-webkit-animation-delay: 2s;
+	animation-delay: 2s;
+}
+
+.slideInDown_2halfsec {
+	-webkit-animation-name: slideInDown;
+	animation-name: slideInDown;
+	-webkit-animation-delay: 2.5s;
+	animation-delay: 2.5s;
+}
+
+.pulse_custom {
+	-webkit-animation-name: pulse;
+	animation-name: pulse;
+	-webkit-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+}
+
+.pulse_infinite {
+	-webkit-animation-name: pulse;
+	animation-name: pulse;
+	-webkit-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+}
+
+.zoomIn_1sec{
+	-webkit-animation-name: zoomIn;
+	animation-name: zoomIn;
+	-webkit-animation-delay: 0.5s;
+	animation-delay: 0.5s;
+}
+
+.invisible{
+	visibility: hidden;
+}
+
+.visible{
+	visibility: visible;
+}
