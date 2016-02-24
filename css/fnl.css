@@ -87,6 +87,7 @@ img.arrow-down{
     width: 318px;
     height: 49px;
     position: absolute;
+    cursor: pointer;
 }
 
 .first-frame img.torch {
