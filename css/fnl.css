@@ -20,6 +20,7 @@
 
 body{
 	margin: 0px;
+	overflow: hidden;
 }
 
 .text-center{
@@ -80,6 +81,12 @@ img.arrow-down{
 	margin: 0 auto;
 	display: block;
 	cursor: pointer;
+}
+
+.first-frame .arrow-shadow {
+    width: 318px;
+    height: 49px;
+    position: absolute;
 }
 
 .first-frame img.torch {
@@ -329,10 +336,13 @@ p.bottom-text {
 	animation-delay: 0.5s;
 }
 
-.invisible{
-	visibility: hidden;
-}
-
-.visible{
-	visibility: visible;
+.slideInDown_inf {
+	-webkit-animation-name: slideInDown_1;
+	animation-name: slideInDown_1;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	/*-webkit-animation-delay: 2s;*/
+	/*animation-delay: 2s;*/
+	-webkit-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
 }

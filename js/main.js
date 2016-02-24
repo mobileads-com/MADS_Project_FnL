@@ -175,20 +175,21 @@ fnl.prototype.firstFrame = function(){
 			'<p class="text-currency-label text-center animated fadeIn slideInDown_1halfsec">JADIKAN IMPIANMU KENYATAAN</p>' +
 			'<p class="text-content text-center animated fadeIn slideInDown_2sec">Beritahu kami berapa banyak<br>yang anda mahukan biasiswa ini</p>' +
 			'<p class="text-click text-center animated fadeIn_2halfsec">Klik di sini untuk mula</p>' +
+			'<div class="arrow-shadow"></div>' +
 			'<img src="img/arrow_down.png" alt="arrow" class="arrow-down animated slideInDown_2halfsec">' +
 			'<img src="img/torch.png" alt="" class="torch animated fadeIn_3sec">' +
 			'<p class="tc">*Terma & Syarat Terpakai</p>' +
 		'</div>';
 
 	setTimeout(function(){
-		document.querySelector('.arrow-down').setAttribute('class', 'arrow-down animated pulse_custom');
-	}, 5000);
+		document.querySelector('.arrow-down').setAttribute('class', 'arrow-down slideInDown_inf');
+	}, 2000);
 
 	var nextHandler = function(){
 		_this.app.tracker('E', 'klikdisini');
 		_this.secondFrame();
 	}
-	document.querySelector('.arrow-down').addEventListener('click', nextHandler, false);
+	document.querySelector('.arrow-down, .arrow-shadow').addEventListener('click', nextHandler, false);
 	_this.preloader(['img/flames/flame_1.png', 'img/flames/flame_2.png', 'img/flames/flame_3.png', 'img/flames/flame_4.png', 'img/flames/flame_5.png', 'img/flames/flame_6.png', 'img/flames/flame_7.png', 'img/flames/flame_8.png', 'img/flames/flame_9.png', 'img/flames/flame_10.png', 'img/flames/flame_11.png', 'img/flames/flame_12.png', 'img/flames/flame_13.png', 'img/flames/flame_14.png', ]);
 }
 
@@ -218,6 +219,7 @@ fnl.prototype.secondFrame = function(){
   	_this.flameEvent = function(){
   		_this.count < 15 ? _this.count++ : '';
   		_this.app.tracker('E', 'klik_secepat');
+  		
   		document.querySelector('.arrow-down').style.visibility = 'hidden';
   		document.querySelector('.text-click').style.visibility = 'hidden';
   		if(_this.count == 14){
@@ -235,10 +237,31 @@ fnl.prototype.secondFrame = function(){
   	}
 
   	document.querySelector('.flame').addEventListener('click', _this.flameEvent, false);
+  	document.querySelector('.flame').addEventListener('mousedown', function(){
+  		clearInterval(_this.reducer);
+  	});
+
+  	document.querySelector('.flame').addEventListener('mouseup', function(){
+  		_this.reduceFlame();
+  	});
+
+  	var doubleTouchStartTimestamp = 0;
+  	document.querySelector('.flame').addEventListener('touchstart', function(event){
+  		clearInterval(_this.reducer);
+  		var now = +(new Date());
+  		if (doubleTouchStartTimestamp + 500 > now) {
+  			event.preventDefault();
+  		}
+  		doubleTouchStartTimestamp = now;
+  	});
+  	document.querySelector('.flame').addEventListener('touchend', function(event){
+  		_this.reduceFlame();
+  	});
 }
 
 fnl.prototype.onSuccess = function(){
 	var _this = this;
+	clearInterval(_this.reducer);
 	_this.parent.innerHTML = '';
 	_this.parent.innerHTML += '<div class="success-frame">' +
   				'<img src="img/content.png" alt="FairNLovely" class="content">' +
@@ -257,6 +280,7 @@ fnl.prototype.onSuccess = function(){
 
 fnl.prototype.onFailed = function(){
 	var _this = this;
+	clearInterval(_this.reducer);
 	_this.parent.style.background = "url('img/bg-fail.png')";
 	_this.parent.innerHTML = '';
 	_this.parent.innerHTML += '<div class="failed-frame">' +
@@ -287,7 +311,7 @@ fnl.prototype.reduceFlame = function(){
 			document.querySelector('.flame').setAttribute('src', 'img/flames/flame_' + _this.count +'.png');
 			document.querySelector('.flame').setAttribute('class', 'flame animated fadeIn_3secduration');
 		}
-	}, 1500);
+	}, 3000);
 }
 
 fnl.prototype.progressbar = function(){
