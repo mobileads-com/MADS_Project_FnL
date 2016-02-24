@@ -88,6 +88,15 @@ img.arrow-down{
 	margin-top: 14px;
 }
 
+.first-frame p.tc {
+	color: #FFF;
+	position: absolute;
+	top: 455px;
+	font-family: Roboto-Regular;
+	font-size: 10px;
+	left: 203px;
+}
+
 .second-frame .logo{
 	margin: 0 auto;
 	display: block;

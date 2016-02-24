@@ -177,6 +177,7 @@ fnl.prototype.firstFrame = function(){
 			'<p class="text-click text-center animated fadeIn_2halfsec">Klik di sini untuk mula</p>' +
 			'<img src="img/arrow_down.png" alt="arrow" class="arrow-down animated slideInDown_2halfsec">' +
 			'<img src="img/torch.png" alt="" class="torch animated fadeIn_3sec">' +
+			'<p class="tc">*Terma & Syarat Terpakai</p>' +
 		'</div>';
 
 	setTimeout(function(){
