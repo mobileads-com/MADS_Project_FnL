@@ -154,6 +154,8 @@ var fnl = function(){
 	this.duration = 60;
 	this.count = 1;
 
+	this.width = 100/15;
+
 	this.timer;
 	this.reducer;
 
@@ -257,20 +259,23 @@ fnl.prototype.secondFrame = function(){
 fnl.prototype.onSuccess = function(){
 	var _this = this;
 	clearInterval(_this.reducer);
+
+	document.querySelector('.arrow-down').setAttribute('class', 'arrow-down animated fadeIn hidden');
+	document.querySelector('.text-click').setAttribute('class', 'text-click text-center animated hidden');
 	_this.parent.innerHTML = '';
 	_this.parent.innerHTML += '<div class="success-frame">' +
-  				'<img src="img/content.png" alt="FairNLovely" class="content">' +
-  				'<p class="text-content text-center animated flipInX">Tahniah! Anda boleh<br>memohon untuk biasiswa dan<br>mengundi untuk<br>university anda supaya<br>perjalanan anda untuk<br>mencapai aspirasi anda akan<br>bersinar terang!</p>' +
-  				'<img src="img/success/ribbon.png" alt="success-ribbon" class="ribbon animated fadeIn">' +
-  				'<div class="bottom-bar">' +
-  					'<p class="bottom-text text-center animated bounceIn">Syabas!</p>' +
-  				'</div>' +
-  			'</div>';
-  	var toLP = function(){
-  		_this.app.tracker('CTR','mohon_biasiswa');
-  		_this.app.linkOpener('https://www.fairandlovely.com.my/fal_biasiswa/');
-  	}
-  	document.querySelector('.ad-wrapper').addEventListener('click', toLP, false);
+	'<img src="img/content.png" alt="FairNLovely" class="content">' +
+	'<p class="text-content text-center animated flipInX">Tahniah! Anda boleh<br>memohon untuk biasiswa dan<br>mengundi untuk<br>university anda supaya<br>perjalanan anda untuk<br>mencapai aspirasi anda akan<br>bersinar terang!</p>' +
+	'<img src="img/success/ribbon.png" alt="success-ribbon" class="ribbon animated fadeIn">' +
+	'<div class="bottom-bar">' +
+	'<p class="bottom-text text-center animated bounceIn">Syabas!</p>' +
+	'</div>' +
+	'</div>';
+	var toLP = function(){
+		_this.app.tracker('CTR','mohon_biasiswa');
+		_this.app.linkOpener('https://www.fairandlovely.com.my/fal_biasiswa/');
+	}
+	document.querySelector('.ad-wrapper').addEventListener('click', toLP, false);
 }
 
 fnl.prototype.onFailed = function(){
@@ -300,29 +305,30 @@ fnl.prototype.reduceFlame = function(){
 	_this.reducer = setInterval(function(){
 		if(_this.count > 1){
 			document.querySelector('.arrow-down').setAttribute('class', 'arrow-down animated slideInDown_inf');
-  			document.querySelector('.text-click').setAttribute('class', 'text-click text-center animated fadeIn_1sec');
+  			document.querySelector('.text-click').setAttribute('class', 'text-click text-center animated fadeIn');
 			_this.count--;
 			document.querySelector('.flame').setAttribute('class', 'flame animated');
 			document.querySelector('.flame').setAttribute('src', 'img/flames/flame_' + _this.count +'.png');
 			document.querySelector('.flame').setAttribute('class', 'flame animated fadeIn_3secduration');
 		}
-	}, 3000);
+	}, 1000);
 }
 
 fnl.prototype.progressbar = function(){
 	var _this = this;
 	document.querySelector('.flame').removeEventListener('click', _this.progressEvent, false);
 	var elem = document.querySelector('.progress');
-	var width = 0;
-	var time = 0;
+	elem.style.width = _this.width + '%';
+	var time = 1;
+	document.querySelector('.timer-right').innerHTML = time + ' saat';
 	_this.timer = setInterval(function(){
 		time++;
 		// if((time >= 1 && time <= 4) ||time == 5 || time == 10 || time == 20 || time == 30 || time == 40 || time == 50 || time == 60){
 			document.querySelector('.timer-right').innerHTML = time + ' saat';
 		// }
-		width = width + (100/15);
-		elem.style.width = width + '%';
-		if(time == 15){ _this.onFailed(); clearInterval(_this.timer); }
+		_this.width = _this.width + (100/15);
+		elem.style.width =_this.width + '%';
+		if(time == 16){ _this.onFailed(); clearInterval(_this.timer); }
 	}, 1000);
 }
 
