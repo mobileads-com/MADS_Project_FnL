@@ -84,10 +84,10 @@ img.arrow-down{
 }
 
 .first-frame .arrow-shadow {
-    width: 318px;
-    height: 49px;
-    position: absolute;
-    cursor: pointer;
+	width: 318px;
+	height: 49px;
+	position: absolute;
+	cursor: pointer;
 }
 
 .first-frame img.torch {
@@ -112,24 +112,24 @@ img.arrow-down{
 }
 
 .second-frame img.torch {
-	margin: 0 auto;
-	display: block;
-	margin-top: 129px;
+	position: absolute;
+	left: 83px;
+	top: 287px;
 }
 
 .second-frame img.flame {
 	position: absolute;
-	margin-top: -14px;
-	margin-left: 104px;
 	z-index: 1;
 	cursor: pointer;
+	left: 104px;
+	top: 145px;
 }
 
 .second-frame .bottom-bar {
 	width: 320px;
 	height: 50px;
 	background-color: #e42668;
-	margin-top: -50px;
+	top: 430px;
 	position: absolute;
 }
 
@@ -346,4 +346,12 @@ p.bottom-text {
 	/*animation-delay: 2s;*/
 	-webkit-animation-iteration-count: infinite;
 	animation-iteration-count: infinite;
+}
+
+.hidden{
+	display: none !important;
+}
+
+.shown{
+	display: block !important;
 }

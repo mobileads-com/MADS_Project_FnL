@@ -224,12 +224,10 @@ fnl.prototype.secondFrame = function(){
   		_this.count < 15 ? _this.count++ : '';
   		_this.app.tracker('E', 'klik_secepat');
   		
-  		document.querySelector('.arrow-down').style.visibility = 'hidden';
-  		document.querySelector('.text-click').style.visibility = 'hidden';
+  		document.querySelector('.arrow-down').setAttribute('class', 'arrow-down animated fadeIn_3secduration hidden');
+  		document.querySelector('.text-click').setAttribute('class', 'text-click text-center animated fadeIn_1sec hidden');
   		if(_this.count == 14){
   			document.querySelector('.arrow-down').setAttribute('class', 'arrow-down animated')
-  			document.querySelector('.arrow-down').style.visibility = 'hidden';
-  			document.querySelector('.text-click').style.visibility = 'hidden';
   			clearInterval(_this.reducer);
   			clearInterval(_this.timer);
   			document.querySelector('.logo').setAttribute('src', 'img/ribbon_top.png');
@@ -301,8 +299,8 @@ fnl.prototype.reduceFlame = function(){
 	var _this = this;
 	_this.reducer = setInterval(function(){
 		if(_this.count > 1){
-			document.querySelector('.arrow-down').style.visibility = 'visible';
-  			document.querySelector('.text-click').style.visibility = 'visible';
+			document.querySelector('.arrow-down').setAttribute('class', 'arrow-down animated slideInDown_inf');
+  			document.querySelector('.text-click').setAttribute('class', 'text-click text-center animated fadeIn_1sec');
 			_this.count--;
 			document.querySelector('.flame').setAttribute('class', 'flame animated');
 			document.querySelector('.flame').setAttribute('src', 'img/flames/flame_' + _this.count +'.png');
