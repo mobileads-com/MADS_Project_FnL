@@ -259,9 +259,6 @@ fnl.prototype.secondFrame = function(){
 fnl.prototype.onSuccess = function(){
 	var _this = this;
 	clearInterval(_this.reducer);
-
-	document.querySelector('.arrow-down').setAttribute('class', 'arrow-down animated fadeIn hidden');
-	document.querySelector('.text-click').setAttribute('class', 'text-click text-center animated hidden');
 	_this.parent.innerHTML = '';
 	_this.parent.innerHTML += '<div class="success-frame">' +
 	'<img src="img/content.png" alt="FairNLovely" class="content">' +
