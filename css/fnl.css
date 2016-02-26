@@ -85,9 +85,10 @@ img.arrow-down{
 
 .first-frame .arrow-shadow {
 	width: 318px;
-	height: 49px;
+	height: 55px;
 	position: absolute;
 	cursor: pointer;
+	z-index: 10;
 }
 
 .first-frame img.torch {
@@ -231,7 +232,7 @@ p.bottom-text {
 	width: 320px;
 	height: 50px;
 	background-color: #e42668;
-	margin-top: 11px;
+	margin-top: 13px;
 	position: absolute;
 }
 

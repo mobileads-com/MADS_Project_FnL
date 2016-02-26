@@ -215,6 +215,7 @@ fnl.prototype.secondFrame = function(){
   		document.querySelector('.arrow-down').setAttribute('class', 'arrow-down animated slideInDown_inf')
   	}, 2000);
   	_this.preloader(['img/ribbon_top.png', 'img/content.png' ,'img/success/ribbon.png', 'img/failed/sinari_aspirasi.png']);
+
   	_this.progressEvent = function(){
   		_this.reduceFlame();
   		_this.progressbar();
@@ -236,7 +237,7 @@ fnl.prototype.secondFrame = function(){
   			document.querySelector('.logo').setAttribute('class', 'logo animated fadeIn_3secduration');
   			setTimeout(function(){
   				_this.onSuccess();
-  			}, 3000);
+  			}, 2000);
   		}
   		if(_this.count <= 14){
   			document.querySelector('.flame').setAttribute('src', 'img/flames/flame_' + _this.count +'.png');
