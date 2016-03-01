@@ -214,7 +214,7 @@ fnl.prototype.secondFrame = function(){
   	setTimeout(function(){
   		document.querySelector('.arrow-down').setAttribute('class', 'arrow-down animated slideInDown_inf')
   	}, 2000);
-  	_this.preloader(['img/ribbon_top.png', 'img/content.png' ,'img/success/ribbon.png', 'img/failed/sinari_aspirasi.png']);
+  	_this.preloader(['img/ribbon_top.png', 'img/content.png' ,'img/ribbon.png']);
 
   	_this.progressEvent = function(){
   		_this.reduceFlame();
@@ -264,7 +264,7 @@ fnl.prototype.onSuccess = function(){
 	_this.parent.innerHTML += '<div class="success-frame">' +
 	'<img src="img/content.png" alt="FairNLovely" class="content">' +
 	'<p class="text-content text-center animated flipInX">Tahniah! Anda boleh<br>memohon untuk biasiswa dan<br>mengundi untuk<br>university anda supaya<br>perjalanan anda untuk<br>mencapai aspirasi anda akan<br>bersinar terang!</p>' +
-	'<img src="img/success/ribbon.png" alt="success-ribbon" class="ribbon animated fadeIn">' +
+	'<img src="img/ribbon.png" alt="success-ribbon" class="ribbon animated fadeIn">' +
 	'<div class="bottom-bar">' +
 	'<p class="bottom-text text-center animated bounceIn">Syabas!</p>' +
 	'</div>' +
@@ -284,9 +284,7 @@ fnl.prototype.onFailed = function(){
 	_this.parent.innerHTML += '<div class="failed-frame">' +
   				'<img src="img/content.png" alt="FairNLovely" class="content">' +
   				'<p class="text-content text-center animated flipInX">Jangan bimbang! Anda<br>masih boleh memohon<br>untuk biasiswa<br>dan mengundi untuk<br>university anda</p>' +
-  				'<img src="img/failed/sinari_aspirasi.png" alt="sinari-aspirasi" class="sinari-aspirasi animated zoomIn_1sec">' +
-  				'<p class="text-subcontent text-center animated zoomIn_1sec">Warga siswi dari universiti yang paling bersiner akan berpeluang untuk.<br>menerima Biasiswa Fair & Lovely</p>' +
-  				'<img src="img/ribbon_top.png" alt="failed-ribbon" class="ribbon animated zoomIn_1sec">' +
+  				'<img src="img/ribbon.png" alt="sinari-aspirasi" class="sinari-aspirasi animated zoomIn_1sec">' +
   				'<div class="bottom-bar">' +
   					'<p class="bottom-text text-center animated flipInX">Masa Tamat!</p>' +
   				'</div>' +
