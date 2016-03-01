@@ -165,7 +165,7 @@ img.arrow-down{
 	width: 320px;
 	height: 50px;
 	background-color: #e42668;
-	margin-top: 12px;
+	margin-top: 32px;
 	position: absolute;
 }
 
@@ -179,7 +179,7 @@ img.content{
 .success-frame img.ribbon {
 	margin: 0 auto;
 	display: block;
-	margin-top:48px;
+	margin-top:28px;
 }
 
 .success-frame p.text-content {
