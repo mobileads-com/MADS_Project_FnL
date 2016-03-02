@@ -172,13 +172,13 @@ fnl.prototype.firstFrame = function(){
 	_this.parent.innerHTML += '<div class="first-frame">' +
 			'<p class="text-header text-center animated slideInDown">Rebutkan Peluang untuk mendapatkan biasiswa</p>' +
 			'<img src="img/logo.png" alt="FairNLovely" class="logo animated fadeIn slideInDown_halfsec">' +
-			'<p class="text-currency text-center animated fadeIn slideInDown_1sec">RM200,000*</p>' +
-			'<p class="text-currency-label text-center animated fadeIn slideInDown_1halfsec">JADIKAN IMPIANMU KENYATAAN</p>' +
-			'<p class="text-content text-center animated fadeIn slideInDown_2sec">Beritahu kami berapa banyak<br>yang anda mahukan biasiswa ini</p>' +
-			'<p class="text-click text-center animated fadeIn_2halfsec">Klik di sini untuk mula</p>' +
+			'<p class="text-currency text-center animated fadeIn_1sec">RM200,000*</p>' +
+			'<p class="text-currency-label text-center animated fadeIn_1sec">JADIKAN IMPIANMU KENYATAAN</p>' +
+			'<p class="text-content text-center animated fadeIn_1sec">Beritahu kami berapa banyak<br>yang anda mahukan biasiswa ini</p>' +
+			'<p class="text-click text-center animated fadeIn_2sec">Klik di sini untuk mula</p>' +
 			'<div class="arrow-shadow"></div>' +
-			'<img src="img/arrow_down.png" alt="arrow" class="arrow-down animated fadeIn_3sec">' +
-			'<img src="img/torch.png" alt="" class="torch animated fadeIn_3sec">' +
+			'<img src="img/arrow_down.png" alt="arrow" class="arrow-down animated fadeIn_2halfsec">' +
+			'<img src="img/torch.png" alt="" class="torch animated fadeIn_2halfsec">' +
 			'<p class="tc">*Terma & Syarat Terpakai</p>' +
 		'</div>';
 
