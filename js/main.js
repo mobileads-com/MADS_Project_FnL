@@ -171,7 +171,7 @@ fnl.prototype.firstFrame = function(){
 	_this.preloader(['img/bg.png', 'img/logo.png', 'img/arrow_down.png', 'img/torch.png']);
 	_this.parent.innerHTML += '<div class="first-frame">' +
 			'<p class="text-header text-center animated slideInDown">Rebutkan Peluang untuk mendapatkan biasiswa</p>' +
-			'<img src="img/logo.png" alt="FairNLovely" class="logo animated fadeIn slideInDown_halfsec">' +
+			'<img src="img/logo.png" alt="FairNLovely" class="logo animated fadeIn_1halfsec">' +
 			'<p class="text-currency text-center animated fadeIn_1halfsec">RM200,000*</p>' +
 			'<p class="text-currency-label text-center animated fadeIn_1halfsec">JADIKAN IMPIANMU KENYATAAN</p>' +
 			'<p class="text-content text-center animated fadeIn_1halfsec">Beritahu kami berapa banyak<br>yang anda mahukan biasiswa ini</p>' +
