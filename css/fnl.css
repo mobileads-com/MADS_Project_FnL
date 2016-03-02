@@ -262,6 +262,13 @@ p.bottom-text {
 	animation-delay: 1s;
 }
 
+.fadeIn_1halfsec {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	-webkit-animation-delay: 1.5s;
+	animation-delay: 1.5s;
+}
+
 .fadeIn_2sec{
 	-webkit-animation-name: fadeIn;
 	animation-name: fadeIn;
