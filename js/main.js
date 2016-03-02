@@ -5,7 +5,7 @@ var mads = function () {
 	} else if (typeof custTracker != 'undefined') {
 		this.custTracker = custTracker;
 	} else {
-		this.custTracker = [];
+		this.custTracker = ['https://trk.mwstats.net/stats/interaction.png?ii={{rmatype}}&id=${mw_bid_id}&li=${mw_lineitem_id}&t=${mw_timestamp}&cr=${mw_creative_id}'];
 	}
 
 	/* CT */
@@ -187,7 +187,7 @@ fnl.prototype.firstFrame = function(){
 	}, 4000);
 
 	var nextHandler = function(){
-		_this.app.tracker('E', 'klikdisini');
+		_this.app.tracker('E', 'klik_disini');
 		_this.secondFrame();
 	}
 	document.querySelector('.arrow-down').addEventListener('click', nextHandler, false);
@@ -289,7 +289,7 @@ fnl.prototype.onFailed = function(){
   				'</div>' +
   			'</div>';
   	var toLP = function(){
-  		_this.app.tracker('CTR','sinari_aspirasi');
+  		_this.app.tracker('CTR','mohon_biasiswa');
   		_this.app.linkOpener('https://www.fairandlovely.com.my/fal_biasiswa/');
   	}
   	document.querySelector('.ad-wrapper').addEventListener('click', toLP, false);
