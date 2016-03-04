@@ -107,7 +107,7 @@ mads.prototype.tracker = function (tt, type, name, value) {
     		}
 
     		/* Append ty for first tracker only */
-    		if (!this.firstEngagementTracked && tt == 'E') {
+    		if (!this.firstEngagementTracked) {
     			src = src + '&ty=E';
     			this.firstEngagementTracked = true;
     		}
@@ -147,8 +147,8 @@ mads.prototype.loadCss = function (href) {
 
 var fnl = function(){
 	this.app = new mads();
-	this.app.loadCss('css/animate.css');
-	this.app.loadCss('css/fnl.css');
+	this.app.loadCss(this.app.path + 'css/animate.css');
+	this.app.loadCss(this.app.path + 'css/fnl.css');
 
 	this.duration = 60;
 	this.count = 1;
@@ -171,14 +171,14 @@ fnl.prototype.firstFrame = function(){
 	_this.preloader(['img/bg.png', 'img/logo.png', 'img/arrow_down.png', 'img/torch.png']);
 	_this.parent.innerHTML += '<div class="first-frame">' +
 			'<p class="text-header text-center animated slideInDown">Rebutkan Peluang untuk mendapatkan biasiswa</p>' +
-			'<img src="img/logo.png" alt="FairNLovely" class="logo animated fadeIn_1halfsec">' +
+			'<img src="'+_this.app.path+'img/logo.png" alt="FairNLovely" class="logo animated fadeIn_1halfsec">' +
 			'<p class="text-currency text-center animated fadeIn_1halfsec">RM200,000*</p>' +
 			'<p class="text-currency-label text-center animated fadeIn_1halfsec">JADIKAN IMPIANMU KENYATAAN</p>' +
 			'<p class="text-content text-center animated fadeIn_1halfsec">Beritahu kami berapa banyak<br>yang anda mahukan biasiswa ini</p>' +
 			'<p class="text-click text-center animated fadeIn_2sec">Klik di sini untuk mula</p>' +
 			'<div class="arrow-shadow"></div>' +
-			'<img src="img/arrow_down.png" alt="arrow" class="arrow-down animated fadeIn_2halfsec">' +
-			'<img src="img/torch.png" alt="" class="torch animated fadeIn_2halfsec">' +
+			'<img src="'+ _this.app.path + 'img/arrow_down.png" alt="arrow" class="arrow-down animated fadeIn_2halfsec">' +
+			'<img src="'+ _this.app.path + 'img/torch.png" alt="" class="torch animated fadeIn_2halfsec">' +
 			'<p class="tc">*Terma & Syarat Terpakai</p>' +
 		'</div>';
 
@@ -199,11 +199,11 @@ fnl.prototype.secondFrame = function(){
 	var _this = this;
 	_this.parent.innerHTML = '';
 	_this.parent.innerHTML += '<div class="second-frame">' +
-  				'<img src="img/logo.png" alt="FairNLovely" class="logo animated slideInDown">' +
+  				'<img src="'+ _this.app.path +'img/logo.png" alt="FairNLovely" class="logo animated slideInDown">' +
   				'<p class="text-click text-center animated fadeIn_1sec">Klik secepat mungkin untuk  menerangi<br>api di obor aspirasi</p>' +
-  				'<img src="img/arrow_down.png" alt="arrow" class="arrow-down animated fadeIn_3secduration">' +
-  				'<img src="img/flames/flame_1.png" class="flame animated fadeIn_1sec">' +
-  				'<img src="img/torch.png" alt="" class="torch animated fadeIn">' +
+  				'<img src="'+ _this.app.path +'img/arrow_down.png" alt="arrow" class="arrow-down animated fadeIn_3secduration">' +
+  				'<img src="'+ _this.app.path +'img/flames/flame_1.png" class="flame animated fadeIn_1sec">' +
+  				'<img src="'+ _this.app.path +'img/torch.png" alt="" class="torch animated fadeIn">' +
   				'<div class="bottom-bar">' +
   					'<div class="progress-bar"><div class="progress"></div></div>'+
   					'<p class="timer-left">0 saat</p>' +
@@ -232,14 +232,14 @@ fnl.prototype.secondFrame = function(){
   			document.querySelector('.arrow-down').setAttribute('class', 'arrow-down animated')
   			clearInterval(_this.reducer);
   			clearInterval(_this.timer);
-  			document.querySelector('.logo').setAttribute('src', 'img/ribbon_top.png');
+  			document.querySelector('.logo').setAttribute('src', _this.app.path + 'img/ribbon_top.png');
   			document.querySelector('.logo').setAttribute('class', 'logo animated fadeIn_3secduration');
   			setTimeout(function(){
   				_this.onSuccess();
   			}, 2000);
   		}
   		if(_this.count <= 14){
-  			document.querySelector('.flame').setAttribute('src', 'img/flames/flame_' + _this.count +'.png');
+  			document.querySelector('.flame').setAttribute('src', _this.app.path + 'img/flames/flame_' + _this.count +'.png');
   		}
   	}
 
@@ -261,9 +261,9 @@ fnl.prototype.onSuccess = function(){
 	clearInterval(_this.reducer);
 	_this.parent.innerHTML = '';
 	_this.parent.innerHTML += '<div class="success-frame">' +
-	'<img src="img/content.png" alt="FairNLovely" class="content">' +
+	'<img src="'+ _this.app.path +'img/content.png" alt="FairNLovely" class="content">' +
 	'<p class="text-content text-center animated flipInX">Tahniah! Anda boleh<br>memohon untuk biasiswa dan<br>mengundi untuk<br>university anda supaya<br>perjalanan anda untuk<br>mencapai aspirasi anda akan<br>bersinar terang!</p>' +
-	'<img src="img/ribbon.png" alt="success-ribbon" class="ribbon animated fadeIn">' +
+	'<img src="'+ _this.app.path +'img/ribbon.png" alt="success-ribbon" class="ribbon animated fadeIn">' +
 	'<div class="bottom-bar">' +
 	'<p class="bottom-text text-center animated bounceIn">Syabas!</p>' +
 	'</div>' +
@@ -281,9 +281,9 @@ fnl.prototype.onFailed = function(){
 	_this.parent.style.background = "url('img/bg-fail.png')";
 	_this.parent.innerHTML = '';
 	_this.parent.innerHTML += '<div class="failed-frame">' +
-  				'<img src="img/content.png" alt="FairNLovely" class="content">' +
+  				'<img src="'+ _this.app.path +'img/content.png" alt="FairNLovely" class="content">' +
   				'<p class="text-content text-center animated flipInX">Jangan bimbang! Anda<br>masih boleh memohon<br>untuk biasiswa<br>dan mengundi untuk<br>university anda</p>' +
-  				'<img src="img/ribbon.png" alt="sinari-aspirasi" class="sinari-aspirasi animated zoomIn_1sec">' +
+  				'<img src="'+ _this.app.path +'img/ribbon.png" alt="sinari-aspirasi" class="sinari-aspirasi animated zoomIn_1sec">' +
   				'<div class="bottom-bar">' +
   					'<p class="bottom-text text-center animated flipInX">Masa Tamat!</p>' +
   				'</div>' +
@@ -303,7 +303,7 @@ fnl.prototype.reduceFlame = function(){
   			document.querySelector('.text-click').setAttribute('class', 'text-click text-center animated fadeIn');
 			_this.count--;
 			document.querySelector('.flame').setAttribute('class', 'flame animated');
-			document.querySelector('.flame').setAttribute('src', 'img/flames/flame_' + _this.count +'.png');
+			document.querySelector('.flame').setAttribute('src', _this.app.path + 'img/flames/flame_' + _this.count +'.png');
 			document.querySelector('.flame').setAttribute('class', 'flame animated fadeIn_3secduration');
 		}
 	}, 1000);
