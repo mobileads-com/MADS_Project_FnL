@@ -5,7 +5,7 @@ var mads = function () {
 	} else if (typeof custTracker != 'undefined') {
 		this.custTracker = custTracker;
 	} else {
-		this.custTracker = ['https://trk.mwstats.net/stats/interaction.png?ii={{rmatype}}&id=${mw_bid_id}&li=${mw_lineitem_id}&t=${mw_timestamp}&cr=${mw_creative_id}'];
+		this.custTracker = [];
 	}
 
 	/* CT */
@@ -87,38 +87,49 @@ mads.prototype.tracker = function (tt, type, name, value) {
     name = name || type;
 
     if ( typeof this.custTracker != 'undefined' && this.custTracker != '' && this.tracked.indexOf(name) == -1 ) {
+    	if( type == 'mohon_biasiswa'){
+                var img = document.createElement('img');
+                var src = this.custTracker[2];
+                img.src = src + '&' + this.id;
+                img.style.display = 'none';
+                this.bodyTag.appendChild(img);
+                this.tracked.push(name);
+	     	}
+
     	for (var i = 0; i < this.custTracker.length; i++) {
-    		var img = document.createElement('img');
+    		if(this.custTracker[i] != '__MW_CLICK_URL__'){
+    			var img = document.createElement('img');
 
-    		if (typeof value == 'undefined') {
-    			value = '';
+    			if (typeof value == 'undefined') {
+    				value = '';
+    			}
+
+    			/* Insert Macro */
+    			var src = this.custTracker[i].replace('{{rmatype}}', type);
+    			src = src.replace('{{rmavalue}}', value);
+
+    			/* Insert TT's macro */
+    			if (this.trackedEngagementType.indexOf(tt) != '-1' || this.engagementTypeExlude.indexOf(tt) != '-1') {
+    				src = src.replace('tt={{rmatt}}', '');
+    			} else {
+    				src = src.replace('{{rmatt}}', tt);
+    				this.trackedEngagementType.push(tt);
+    			}
+
+    			/* Append ty for first tracker only */
+    			if (!this.firstEngagementTracked) {
+    				src = src + '&ty=E';
+    				this.firstEngagementTracked = true;
+    			}
+
+    			/* */
+    			img.src = src + '&' + this.id;
+
+    			img.style.display = 'none';
+    			this.bodyTag.appendChild(img);
+
+    			this.tracked.push(name);
     		}
-
-    		/* Insert Macro */
-    		var src = this.custTracker[i].replace('{{rmatype}}', type);
-    		src = src.replace('{{rmavalue}}', value);
-
-    		/* Insert TT's macro */
-    		if (this.trackedEngagementType.indexOf(tt) != '-1' || this.engagementTypeExlude.indexOf(tt) != '-1') {
-    			src = src.replace('tt={{rmatt}}', '');
-    		} else {
-    			src = src.replace('{{rmatt}}', tt);
-    			this.trackedEngagementType.push(tt);
-    		}
-
-    		/* Append ty for first tracker only */
-    		if (!this.firstEngagementTracked) {
-    			src = src + '&ty=E';
-    			this.firstEngagementTracked = true;
-    		}
-
-    		/* */
-    		img.src = src + '&' + this.id;
-
-    		img.style.display = 'none';
-    		this.bodyTag.appendChild(img);
-
-    		this.tracked.push(name);
     	}
     }
   };
@@ -278,7 +289,7 @@ fnl.prototype.onSuccess = function(){
 fnl.prototype.onFailed = function(){
 	var _this = this;
 	clearInterval(_this.reducer);
-	_this.parent.style.background = "url('img/bg-fail.png')";
+	_this.parent.style.background = "url("+ _this.app.path +"'img/bg-fail.png')";
 	_this.parent.innerHTML = '';
 	_this.parent.innerHTML += '<div class="failed-frame">' +
   				'<img src="'+ _this.app.path +'img/content.png" alt="FairNLovely" class="content">' +
