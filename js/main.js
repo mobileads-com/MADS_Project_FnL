@@ -201,8 +201,8 @@ fnl.prototype.firstFrame = function(){
 		_this.app.tracker('E', 'klik_disini');
 		_this.secondFrame();
 	}
-	document.querySelector('.arrow-down').addEventListener('click', nextHandler, false);
-	document.querySelector('.arrow-shadow').addEventListener('click', nextHandler, false);
+	document.querySelector('.first-frame').addEventListener('click', nextHandler, false);
+	// document.querySelector('.arrow-shadow').addEventListener('click', nextHandler, false);
 	_this.preloader(['img/flames/flame_1.png', 'img/flames/flame_2.png', 'img/flames/flame_3.png', 'img/flames/flame_4.png', 'img/flames/flame_5.png', 'img/flames/flame_6.png', 'img/flames/flame_7.png', 'img/flames/flame_8.png', 'img/flames/flame_9.png', 'img/flames/flame_10.png', 'img/flames/flame_11.png', 'img/flames/flame_12.png', 'img/flames/flame_13.png', 'img/flames/flame_14.png', ]);
 }
 
